@@ -19,13 +19,16 @@
     <link href="styles/Mobile.css" rel="stylesheet" type="text/css" data-name="main" />
     <link href="" rel="stylesheet" type="text/css" data-name="theme" />
     <style>
+    
     .tiptext {
-    background:#D4E2F1;
+    background:#FFFFFF;
     border: 1px #333;
     padding:5px;
     width:auto;
-    color: #222;
-    left: 900px;
+    height:auto;
+    color: green;
+    right: 300px;
+    top:10px;
 }
 .description {
    margin-top:36px;
@@ -33,11 +36,11 @@
      display:none; 
     position:absolute;
     border:1px solid #000;
-    width:300px;
+    min-width:500px;
     height:auto;
     z-index: 1;
-    background-color:#6495ED;
-   margin-left: -90px;
+    background-color:#FFFFFF;
+   margin-left: 100px;
    
 }
 
@@ -87,14 +90,14 @@
            
             <!-- <a id="sslogo" target="_blank" ng-show="settings.Server" ng-href="{{settings.Server}}" title="{{settings.Server}}"></a>-->
             
-            <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('A');">
+            <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('A');"></fb:login-button>
             <a id="ssname" href=""></a>
             
           <div align="center" class="tiptext cartstyle" style="">
          <div class="description boxshadow roundbox" id="overlay">
         
          <ngcart-cart></ngcart-cart>
-         <ngcart-checkout service="http" settings="{ url:'#/checkout' }">Checkout</ngcart-checkout> 
+         <ngcart-checkout service="http" settings="{ url:'#/checkout' }">checkout</ngcart-checkout> 
          </div>
              <ngcart-summary></ngcart-summary>             
        	

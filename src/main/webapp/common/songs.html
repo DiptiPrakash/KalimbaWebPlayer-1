@@ -3,24 +3,24 @@
         <a class="add" href="" title="Add To Queue" ng-click="addSongToQueue(o)" stop-event="click"></a>
         <!--<a class="remove" href="" title="Remove Song" ng-click="removeSongFromQueue(o)" stop-event="click"></a>-->
         <!--<a class="play" href="" title="Start Playing From This Song" ng-click="playFrom($index)" stop-event="click"></a>-->
-<<<<<<< HEAD
-        <a class="download" href="" title="Download Song" ng-click="download(o.id)"></a>
+
+       <!--  <a class="download" href="" title="Download Song" ng-click="download(o.id)"></a>-->
         <a href="" title="Favorite" ng-class="{'favorite': o.starred, 'rate': !o.starred}" ng-click="updateFavorite(o)" stop-event="click"></a>
         <div class="clear"></div>
     </div>
     <!-- <div class="track floatleft" ng-bind-html="o.track"></div> -->
-    <div class="title floatleft" title="{{o.description}}" ng-bind-html="o.name"></div>
-=======
+    <!-- <div class="title floatleft" title="{{o.description}}" ng-bind-html="o.name"></div>-->
+
         <!--<a class="download" href="" title="Download Song" ng-click="download(o.id)"></a>-->
         <a href="" title="Favorite" ng-class="{'favorite': o.starred, 'rate': !o.starred}" ng-click="updateFavorite(o)" stop-event="click"></a>
-        <ngcart-addtocart id="{{ o.id }}" name="{{ o.name }}" price="{{4}}" quantity="4" quantity-max="1" img="<img src="{{o.coverartfull}}">
-        <img src="images/download_gl_9x12.png"  style="float:right;position: relative;top: -16px;right: -50px;"/> 
+        <ngcart-addtocart id="{{ o.id }}" name="{{ o.name }}" price="{{4}}" quantity="4" quantity-max="1" img="{{o.artist}}">
+        <img src="images/download_gl_9x12.png"  /> 
         </ngcart-addtocart>
         <div class="clear"></div>
     </div>
     <!-- <div class="track floatleft" > </div> -->
-    <div class="title floatleft" title="{{o.description}}" ng-bind-html="o.name" style="margin-left: 100px;"></div>
->>>>>>> c4176c749d0ce039d1a53d167c60601b06d6d3d9
+  <div class="title floatleft" title="{{o.description}}" ng-bind-html="o.name" style="margin-left: 100px;"></div>
+
     <span class="artist floatleft" ng-bind-html="o.artist"></span>
     <div ng-show="o.album && itemType !== 'archive'">
         <img src="{{o.coverartfull}}">

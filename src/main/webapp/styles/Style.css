@@ -903,6 +903,7 @@ ul.songlist .row img
     padding: 2px;
     height: 15px;
     width: 10px;
+    margin-top: 8px;
 }
 ul.songlist .row .itemactions
 {
