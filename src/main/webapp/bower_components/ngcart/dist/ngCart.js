@@ -350,14 +350,18 @@ angular.module('ngCart', ['ngCart.directives'])
         var manageCartUI = function(){
           	if($scope.ngCart.getItems()<=0){
            		document.getElementById("testid").style.color="#888";
-           	/*	document.getElementById("dialogtest").style.width="0px";
+          		document.getElementById("dialogtest").style.width="0px";
            		document.getElementById("dialogtest").style.height="0px";
-           		*/
+           		document.getElementById("dialogtest").style.border="#fff";
+           		
            
            		//document.getElementsByClassName("tiptext").unbind('mouseover mouseout'); 
            		
            	}else{
            		document.getElementById("testid").style.color="green"; 
+           		document.getElementById("dialogtest").style.width="300px";
+           		document.getElementById("dialogtest").style.height="auto";
+           		document.getElementById("dialogtest").style.border="1px solid green";
            		/*document.getElementByClassName("tiptext").addEventListener("mousemove",function() {
            	    	 autoOpen: false;
            	        $(this).children(".description").show();
