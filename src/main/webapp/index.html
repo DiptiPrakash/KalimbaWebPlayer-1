@@ -87,11 +87,12 @@
                 <span ng-attr-id="{{ 'msg_' + $index }}" class="message" ng-repeat="item in Messages track by $index" ng-bind-html="item"></span>
             </div>
             <div id="loading"></div>
+            <a id="jslogo" title="Kalimba Radio" class="showQueue" href=""></a>
            
             <!-- <a id="sslogo" target="_blank" ng-show="settings.Server" ng-href="{{settings.Server}}" title="{{settings.Server}}"></a>-->
             
             <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('A');"></fb:login-button>
-            <a id="ssname" href=""></a>
+            <div id="ssname" href=""></div>
             
           <div align="center" class="tiptext cartstyle" style="">
          <div class="description boxshadow roundbox" id="overlay">
@@ -261,6 +262,9 @@
 
     				});
     		
+    		
+    		FB
+			.getLoginStatus(function(response) {	
     		 FB
     			.api(
     					'/me',
@@ -268,15 +272,16 @@
 
     						//console.log(response.data.url);
 
-    						
+    						if (response.name !== 'undefined') {
     						document.getElementById('ssname').style.display = "block";
-    						document.getElementById('ssname').innerHTML = response.name;
-    						
+    						document.getElementById('ssname').innerHTML = response.first_name;
+    						}
     						console.log("the end");
 
     						//document.forms[0].action="/U";
 
-    					});  
+    					}); 
+			});
     		
     		
     	};
@@ -338,7 +343,7 @@
     							//alert(document.getElementById("name").value);
     							//alert(response.name);
     							document.getElementById('ssname').style.display = "block";
-								document.getElementById('ssname').innerHTML = response.name;
+								document.getElementById('ssname').innerHTML = response.first_name;
 								
     							document.forms[0].name.value = response.name;
     							//alert(document.forms[0].name.value);
