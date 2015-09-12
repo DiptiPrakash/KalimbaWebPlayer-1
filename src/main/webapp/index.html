@@ -31,16 +31,15 @@
     top:10px;
 }
 .description {
-   margin-top:36px;
-      
-     display:none; 
+   margin-top:36px;      
+    display:none; 
     position:absolute;
-    border:1px solid #000;
+    border:1px solid green;
     min-width:500px;
     height:auto;
     z-index: 1;
     background-color:#FFFFFF;
-   margin-left: 100px;
+   margin-left: -15px;
    
 }
 
@@ -71,12 +70,14 @@
 
 </style>
     <script>
+    
+        
     $(".tiptext").mouseover(function() {
     	 autoOpen: false;
         $(this).children(".description").show();
     }).mouseout(function() {
         $(this).children(".description").hide();
-    });
+    });    
 </script>
 </head>
 <body ui-keypress="{'32 179': 'togglePause($event)', '43 61 187': 'turnVolumeUp($event)', '45 95 189': 'turnVolumeDown($event)'}" ui-keydown="{'right 176': 'nextTrack($event)', 'left 177': 'previousTrack($event)'}">
@@ -94,13 +95,13 @@
             <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('A');"></fb:login-button>
             <div id="ssname" href=""></div>
             
-          <div align="center" class="tiptext cartstyle" style="">
-         <div class="description boxshadow roundbox" id="overlay">
+          <div align="center" class="tiptext cartstyle" style="" id="testid" >
+         <div class="description boxshadow roundbox" id="dialogtest">
         
          <ngcart-cart></ngcart-cart>
-         <ngcart-checkout service="http" settings="{ url:'#/checkout' }">checkout</ngcart-checkout> 
+       <!--  <ngcart-checkout service="http" settings="{ url:'#/checkout' }">Checkout</ngcart-checkout>  -->
          </div>
-             <ngcart-summary></ngcart-summary>             
+             <ngcart-summary></ngcart-summary>            
        	
          </div>
         

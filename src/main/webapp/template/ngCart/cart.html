@@ -1,9 +1,11 @@
+<head>
 
-<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+</head>
+<!-- <div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
     Your cart is empty
 </div>
-
-<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0" id="template/ngCart/addtocart.html">
+ -->
+<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0" id="template/ngCart/addtocart.html" >
 
     <table class="table table-striped ngCart cart" cellspacing="10px" >
 
@@ -19,20 +21,6 @@
         </thead>
         <tfoot>
 			
-			<tr ng-show="ngCart.getTax()">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
-            <td>{{ ngCart.getTax() | currency }}</td>
-        </tr>
-        <tr ng-show="ngCart.getShipping()">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Shipping:</td>
-            <td>{{ ngCart.getShipping() | currency }}</td>
-        </tr>
         <tr>
             <td></td>
             <td></td>

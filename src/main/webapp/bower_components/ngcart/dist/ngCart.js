@@ -39,6 +39,8 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.addItem = function (id, name, price, quantity, data,img) {
+        	
+        	
 
             var inCart = this.getItemById(id);
 
@@ -343,6 +345,48 @@ angular.module('ngCart', ['ngCart.directives'])
 
     .controller('CartController',['$scope', 'ngCart', function($scope, ngCart) {
         $scope.ngCart = ngCart;
+        
+        
+        var manageCartUI = function(){
+          	if($scope.ngCart.getItems()<=0){
+           		document.getElementById("testid").style.color="#888";
+          		document.getElementById("dialogtest").style.width="0px";
+           		document.getElementById("dialogtest").style.height="0px";
+           		document.getElementById("dialogtest").style.border="#fff";
+           		
+           
+           		//document.getElementsByClassName("tiptext").unbind('mouseover mouseout'); 
+           		
+           	}else{
+           		document.getElementById("testid").style.color="green"; 
+           		document.getElementById("dialogtest").style.width="300px";
+           		document.getElementById("dialogtest").style.height="auto";
+           		document.getElementById("dialogtest").style.border="1px solid green";
+           		/*document.getElementByClassName("tiptext").addEventListener("mousemove",function() {
+           	    	 autoOpen: false;
+           	        $(this).children(".description").show();
+           	    }).mouseout(function() {
+           	        $(this).children(".description").hide();
+           	    });*/
+           	    		
+               	}
+        };
+        
+       
+        
+      $scope.$on("ngCart:change", function(){
+        	manageCartUI();
+        });
+        
+       // document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+     // Remove the event handler from <div>
+     //document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+        
+        
+        
+        manageCartUI();
+        
         
 
     }])
