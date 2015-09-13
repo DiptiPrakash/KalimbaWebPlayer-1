@@ -32,9 +32,9 @@ angular.module('jamstash.settings.service', [])
         Server: "http://subsonic.org/demo"),
         */
         Url: "http://jamstash.com/#/archive/",
-        Username: "guest1",
-        Password: "guest",
-        Server: "http://demo.subsonic.org",
+        Username: "jamuser",
+        Password: "support1!",
+        Server: "http://www.kalimbaradio.com:4040",
         Timeout: 20000,
         Protocol: "jsonp",
         ApplicationName: "Jamstash",

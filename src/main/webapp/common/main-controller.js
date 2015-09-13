@@ -113,11 +113,11 @@ angular.module('JamStash')
 
     $rootScope.showQueue = function () {
         $('#SideBar').css('display', 'block');
-        $('#right-component').removeClass('lgcolumn_expanded');
+       /* $('#right-component').removeClass('lgcolumn_expanded');*/
     };
     $rootScope.hideQueue = function () {
         $('#SideBar').css('display', 'none');
-        $('#right-component').addClass('lgcolumn_expanded');
+      /*  $('#right-component').addClass('lgcolumn_expanded');*/
     };
     $scope.toggleQueue = function () {
         if ($('#SideBar').css('display') === 'none') {
@@ -125,6 +125,11 @@ angular.module('JamStash')
         } else {
             $rootScope.hideQueue();
         }
+    };
+    $scope.showQueue = function () {
+        
+            $rootScope.showQueue();
+   
     };
     $rootScope.showArtists = function () {
         $('#left-component').css('display', '');
@@ -461,11 +466,13 @@ angular.module('JamStash')
     
     /* Launch on Startup */
     $scope.loadSettings();
+    
     utils.switchTheme(globals.settings.Theme);
+    $scope.showQueue();
 
-    if(!globals.settings.ShowQueue) {
+    /*if(!globals.settings.ShowQueue) {
         $rootScope.hideQueue();
-    }
+    }*/
 
     if ($scope.loggedIn()) {
         //$scope.ping();
