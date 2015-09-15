@@ -59,7 +59,7 @@ angular.module('JamStash')
         } else {
             globals.settings[id] = true;
         }
-        notifications.updateMessage(setting + ' : ' + globals.settings[id], true);
+       // notifications.updateMessage(setting + ' : ' + globals.settings[id], true);
     };
 
     $.ajaxSetup({
@@ -319,7 +319,7 @@ angular.module('JamStash')
             timeout: globals.settings.Timeout,
             success: function (data) {
                 if (typeof data["subsonic-response"].error != 'undefined') {
-                    notifications.updateMessage('Error: ' + data["subsonic-response"].error.message, true);
+                   // notifications.updateMessage('Error: ' + data["subsonic-response"].error.message, true);
                 } else {
                     if (data["subsonic-response"].user.downloadRole === true) {
                         $window.location.href = globals.BaseURL() + '/download.view?' + globals.BaseParams() + '&id=' + id;
