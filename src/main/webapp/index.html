@@ -7,9 +7,9 @@
     <meta property="og:image" content="http://jamstash.com/images/fbpreview.png"/>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title ng-bind="Page.title()">Kalimba Radio</title>
-    <link href="images/favicon_32x32.ico" rel="shortcut icon" />
-    <link rel="icon" href="images/favicon_48x48.png" sizes="48x48"/>
-    <link rel="icon" href="images/favicon_32x32.png" sizes="32x32"/>
+    <link href="images/favicon_webplayer.ico" rel="shortcut icon" />
+    <link rel="icon" href="images/favicon_webplayer.png" sizes="48x48"/>
+    <link rel="icon" href="images/favicon_webplayer.png" sizes="32x32"/>
     <!-- build:css(.) styles/vendor.min.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/fancybox/source/jquery.fancybox.css" />
@@ -92,12 +92,13 @@
            
             <!-- <a id="sslogo" target="_blank" ng-show="settings.Server" ng-href="{{settings.Server}}" title="{{settings.Server}}"></a>-->
             
-            <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('A');"></fb:login-button>
+            <fb:login-button id="sslogo" size="medium" onlogin="checkLoginState('U');"></fb:login-button>
             <div id="ssname" href=""></div>
-            
+           <!--   <div id="globalactions"> <a href="" class="button" ng-click="toggleQueue()" title="Pin Queue">Queue</a> </div> -->
+         <!--   <div id="loginElement"></div> -->
           <div align="center" class="tiptext cartstyle" style="" id="testid" >
          <div class="description boxshadow roundbox" id="dialogtest">
-        
+        <div id="loginElement"></div>
          <ngcart-cart></ngcart-cart>
        <!--  <ngcart-checkout service="http" settings="{ url:'#/checkout' }">Checkout</ngcart-checkout>  -->
          </div>
@@ -249,7 +250,7 @@
 							//document.getElementById('ssname').style.display = "block";
     						//document.getElementById('ssname').innerHTML = response.name;
     						//	callServlet();
-
+							//testAPI('U');
     						/* if(sessionMail==""){
     							
     							FB.logout(function(response) {
@@ -273,7 +274,7 @@
 
     						//console.log(response.data.url);
 
-    						if (response.name !== 'undefined') {
+    						if (typeof  response.name != 'undefined') {
     						document.getElementById('ssname').style.display = "block";
     						document.getElementById('ssname').innerHTML = response.first_name;
     						}
@@ -343,9 +344,10 @@
     							//alert(document.forms[0].getElementById("name").value);
     							//alert(document.getElementById("name").value);
     							//alert(response.name);
+    							if (typeof  response.first_name != 'undefined') {
     							document.getElementById('ssname').style.display = "block";
 								document.getElementById('ssname').innerHTML = response.first_name;
-								
+    							}
     							document.forms[0].name.value = response.name;
     							//alert(document.forms[0].name.value);
     							document.forms[0].email.value = response.email;
