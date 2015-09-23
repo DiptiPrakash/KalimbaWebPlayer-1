@@ -69,16 +69,7 @@
 }
 
 </style>
-    <script>
-    
-        
-    $(".tiptext").mouseover(function() {
-    	 autoOpen: false;
-        $(this).children(".description").show();
-    }).mouseout(function() {
-        $(this).children(".description").hide();
-    });    
-</script>
+   
 </head>
 <body ui-keypress="{'32 179': 'togglePause($event)', '43 61 187': 'turnVolumeUp($event)', '45 95 189': 'turnVolumeDown($event)'}" ui-keydown="{'right 176': 'nextTrack($event)', 'left 177': 'previousTrack($event)'}">
    <form action="" method="post">
