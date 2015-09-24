@@ -1,41 +1,11 @@
 <head>
-<style> 
-
-  .odd{background-color: white;} 
-
-  .even{background-color: gray;} 
-  
-  
-  function alternate(id){ 
-
-  if(document.getElementsByTagName){  
-
-    var table = document.getElementById(id);   
-
-    var rows = table.getElementsByTagName("tr");   
-
-    for(i = 0; i < rows.length; i++){           
-
-  //manipulate rows 
-
-      if(i % 2 == 0){ 
-
-        rows[i].className = "even"; 
-
-      }else{ 
-
-        rows[i].className = "odd"; 
-
-      }       
-
-    } 
-
-  } 
-
-}
+<style type="text/css">
+tr.top td { border-top: thin solid black; }
+tr.bottom td { border-bottom: 1px solid #DDDDDD; }
+tr.row td:first-child { border-left: thin solid black; }
+tr.row td:last-child { border-right: thin solid black; }
 
 </style>
-
 
 
 </head>
@@ -43,12 +13,12 @@
     Your cart is empty
 </div>
  -->
-<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0" id="template/ngCart/addtocart.html" style="padding-bottom:50px" onload="alternate('thetable')">
+<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0" id="template/ngCart/addtocart.html" style="padding-bottom:50px" >
 
-    <table class="table table-striped ngCart cart" id="thetable" cellspacing="5px" cellpading="5px" class="odd even" style="border: 1px;color: black" bordercolor="black">
+    <table class="table table-striped ngCart cart table"  cellspacing="0px" cellpading="50px" style="width: 500px"  >
 
-        <thead>
-        <tr bgcolor="Grey">
+        <thead >
+        <tr style="height: 50px"  >
             <th></th>
             <th>SongName</th>
             <th>ArtistName</th>
@@ -63,22 +33,22 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Total:</td>
-            <td>{{ ngCart.totalCost() | currency }}</td>
+            <td align="center">Total:</td>
+            <td align="center">{{ ngCart.totalCost() | currency }}</td>
         </tr>
         </tfoot>
         <tbody>
-        <tr ng-repeat="item in ngCart.getCart().items track by $index"  bordercolor="black" bgcolor="#D4E2F1">
-            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove">
+        <tr ng-repeat="item in ngCart.getCart().items track by $index"   class="bottom" style="height: 50px">
+            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"  >
             <img src="images/delete.png"  style="height: 25px;width: 20px;"/></span></td>
 
-            <td>{{ item.getName() }}</td>
-            <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
+            <td align="center">{{ item.getName() }}</td>
+            <td align="center"><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
                       ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
                 {{ item.getImg() }}&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></td>
-            <td align="right">{{ item.getPrice() | currency}} </td>
-            <td align="right">{{ item.getTotal() | currency }}</td>
+            <td align="center">{{ item.getPrice() | currency}} </td>
+            <td align="center">{{ item.getTotal() | currency }}</td>
             
         </tr>
       <!--  <tr align="center"><button class="btn btn-primary" >proceedtocheckout</button></tr> -->
