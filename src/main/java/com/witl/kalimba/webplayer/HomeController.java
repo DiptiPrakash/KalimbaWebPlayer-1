@@ -88,7 +88,7 @@ public class HomeController {
 		}
 		userDAO.create(user);
 		
-		modelAndView = new ModelAndView("redirect:/");
+			modelAndView = new ModelAndView("redirect:/");
 		
 		// modelAndView.addObject("returnfrom", "modelandview");
 		return modelAndView;
