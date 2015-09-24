@@ -52,13 +52,13 @@
                 <ul class="simplelist songlist noselect">
                     <div class="" ng-repeat="o in album" ng-switch on="o.type">
                         <li class="album" ng-switch-when="byfolder" id="{{o.id}}" ng-class="{'selected': selectedAlbum == o.id, 'albumgrid': settings.DefaultLibraryLayout.id == 'grid'}" ng-click="getSongs(o.id, '')" parentid="{{o.parentid}}">
-                            <div class="itemactions">
+                           <!--   <div class="itemactions">
                                 <a class="add hover" href="" title="Add To Play Queue" ng-click="getSongs(o.id, 'add')" stop-event="click"></a>
                                 <a class="play hover" href="" title="Play" ng-click="getSongs(o.id, 'play')" stop-event="click"></a>
                                 <a class="download hover" href="" ng-click="download(o.id)" title="Download" stop-event="click"></a>
                                 <a title="Favorite hover" href="" ng-class="{'favorite': o.starred, 'rate': !o.starred}" ng-click="updateFavorite(o)" stop-event="click"></a>
                                 <a class="info hover" href="" title="{{'Created: ' + o.date}}"></a>
-                            </div>
+                            </div>-->
                             <div class="albumart"><img ng-src="{{o.coverartthumb}}" src="images/albumdefault_160.jpg"></div>
                             <div class="albuminfo">
                                 <div class="title" title="{{o.name}}" ng-bind-html="o.name"></div>
@@ -80,7 +80,7 @@
    						 <div class="itemactions-head">
 					     </div>
     					 <div class="track floatleft" ></div>
-						 <div class="title floatleft"  ><a stop-event="click"><strong>SONG</strong></a></div>
+						 <div class="title floatleft" style="margin-left: 100px;"  ><a stop-event="click"><strong>SONG</strong></a></div>
    						 <span class="artist floatleft" ><a stop-event="click" ng-click="sortSubsonicSongs('artist');"><strong>ARTIST</strong></a></span>
     					 <div class="albumblock floatleft" ><a stop-event="click" class="songtitle" ng-click="sortSubsonicSongs('album');"><strong>ALBUM</strong></a></div>
     					 <!-- <div class="albumblock floatleft">&nbsp;</div> -->
@@ -102,7 +102,7 @@
         <div style="height:50px">&nbsp;</div>
             <ul class="tablist">
                 <li class=""  ng-class="{'selected': setIndexSelected }"  ng-click="toggleIndex()"><a href="">Artists</a></li>
-                <li class=""  ng-class="{'selected': setPlaylistSelected }" ng-click="togglePlaylist()"><a href="">Featured</a></li>
+                <li class=""  ng-class="{'selected': setPlaylistSelected }" ng-click="togglePlaylist()"><a href="">Playlist</a></li>
                 <!-- <li class="" ng-click="togglePodcast()"><a href="">Podcasts</a></li>-->
             </ul>
             <div class="clear"></div>

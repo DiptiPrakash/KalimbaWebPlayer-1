@@ -3,7 +3,7 @@ package com.witl.kalimba.webplayer;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Paths;
+//import java.nio.file.Paths;
 
 
 
@@ -11,7 +11,7 @@ public class Conf
 {
         private File file;
 
-        public Conf()
+       /* public Conf()
         {
        
         	try {
@@ -57,6 +57,6 @@ public class Conf
                    System.out.println(e);
                 }
                 return val;
-        }
+        }*/
 
 }
